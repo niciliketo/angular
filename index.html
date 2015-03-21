@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="store">
+   <head>
+     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+     <link rel="stylesheet" type="text/css" href="assets/styles/index.css"
+  </head>
+  <body ng-controller="StoreController as store">
+    <ul class='list-group'>
+      <li class='list-group-item' ng-repeat="product in store.products | orderBy:'-price'">
+      <h3>
+      <product-title></product-title>
+        <img ng-src="{{product.images[0].full}}"/>
+      </h3>
+      <product-panels ng-controller="PanelController as panels">
+      </product-panels>
+      <section ng-controller="PanelController as panel">
+
+        <!--
+          <blockquote ng-repeat="review in product.reviews">
+            <b>Stars: {{review.stars}}</b>
+            {{review.body}}
+            <cite>-by: {{review.author}}</cite>
+          </blockquote>
+          <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate >
+          <blockquote>
+            <b>Stars: {{reviewCtrl.review.stars}}</b>
+            {{reviewCtrl.review.body}}
+            <cite>-by: {{reviewCtrl.review.author}}</cite>
+          </blockquote>
+            <select ng-model="reviewCtrl.review.stars" required>
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+              <option value="4">4 stars</option>
+              <option value="5">5 stars</option>
+            </select>
+            <textarea ng-model="reviewCtrl.review.body" required></textarea>
+            <label>by:</label>
+            <input type="email" ng-model="reviewCtrl.review.author"  required/>
+            <div>Review form is {{reviewForm.$valid}}</div>
+            <input type="submit" value="Submit"/>
+          </form> -->
+
+      </section>
+      </li>
+    </ul>
+
+
+    <script type='text/javascript' src='bower_components/angular/angular.min.js'></script>
+  <script type='text/javascript' src='assets/javascript/app.js'></script>
+  </body>
+</html>

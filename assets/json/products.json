@@ -1,0 +1,38 @@
+[
+    {
+      name: "Dodecahedron",
+      price: 2.95,
+      description: "Some genms have hidden qualities behind their shine...",
+      canPurchase: true,
+      soldOut: false,
+      images: [
+        {
+          full: 'Dodecahedron.jpg',
+          thumb: 'Dodecahedron-thumb.jpg'
+        },
+        {
+          full: 'Dodecahedron2.jpg',
+          thumb: 'Dodecahedron2-thumb.jpg'
+        }
+      ],
+      reviews: [
+        {
+          stars: 5,
+          body: "I love this product",
+          author: "jbloggs@msf.com"
+        },
+        {
+          stars: 1,
+          body: "Sucks",
+          author: "jbloggs@hater.com"
+        }
+      ]
+    },
+    {
+      name: "Pentagonal Gem",
+      price: 5.95,
+      description: "Penta... what",
+      canPurchase: false,
+      soldOut: false
+    }
+	]

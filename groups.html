@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="groupApp">
+   <head>
+     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body ng-controller='groupCtrl'>
+    <div class="page-header">
+      <h1>Participant Groups <small>Click a group to see the members</small></h1>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-4'>
+        <div ng-controller='groupCreateCtrl'>
+          <input type="text" id="inputGroupName" ng-model="group.group_name"/>
+          <button ng-click="addGroup()"  class="btn btn-primary" type="button">Add</button>
+        </div>
+          <ul class='list-group' >
+            <li ng-repeat='group in groups' class='list-group-item'>
+            <a href ng-click="selectGroup(group.id)"> {{group.group_name}}</a>
+            <button ng-click="deleteGroup(group.id)" class="btn btn-xs btn-danger" type="button">Delete</button>
+            </li>
+          </ul>
+      </div>
+      <div class='col-md-4' ng-controller='groupDetailCtrl'>
+        <div class="panel-heading">
+          <h3 class="panel-title">{{group.group_name}}</h3>
+        </div>
+        <div class="panel-body">
+          <ul class='list-group'>
+            <li class='list-group-item' ng-repeat='group_user in group.group_users'>
+              <h4 class="list-group-item-heading">{{group_user.user.user_company_name}}</h4>
+              <p class="list-group-item-text">{{group_user.user.name}}</p>
+              <p>{{group_user.user.email}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class='col-md-4' ng-controller='groupDetailCtrl'>
+        <div class="panel-heading">
+          <h3 class="panel-title">{{group.group_name}}</h3>
+        </div>
+        <div class="panel-body">
+          <ul class='list-group'>
+            <li class='list-group-item' ng-repeat='group_user in group.group_users'>
+              <h4 class="list-group-item-heading">{{group_user.user.user_company_name}}</h4>
+              <p class="list-group-item-text">{{group_user.user.name}}</p>
+              <p>{{group_user.user.email}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  <script type='text/javascript' src='bower_components/angular/angular.min.js'></script>
+  <script type='text/javascript' src="bower_components/angular/bower_components/angular-resource/angular-resource.js"></script>
+  <script type='text/javascript' src="assets/javascript/services.js"></script>
+  <script type='text/javascript' src="assets/javascript/controllers.js"></script>
+  <script type='text/javascript' src="assets/javascript/filters.js"></script>
+  <script type='text/javascript' src='assets/javascript/groups-app.js'></script>
+  </body>
+</html>
